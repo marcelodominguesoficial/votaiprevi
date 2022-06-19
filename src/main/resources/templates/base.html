@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headCust">
+<meta charset="utf-8">
+<title>Vota aí</title>
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+<link th:href="@{/estilo.css}" rel="stylesheet" />
+</head>
+<body>
+	<nav id="menu" th:fragment="navlinks">
+		<ul class="nav justify-content-center">
+			<li class="nav-item"><a class="nav-link active" href="/">Home</a>
+			</li>
+			<li class="nav-item"><a class="nav-link active" href="/eleicao">Eleição</a>
+			</li>
+			<li class="nav-item"><a class="nav-link active" href="/cargo">Cargo</a>
+			</li>
+			<li class="nav-item"><a class="nav-link active"
+				href="/candidato">Candidato</a></li>
+		</ul>
+	</nav>
+
+	<footer th:fragment="footer">
+
+		<div class="card">
+			<div class="card-body">
+				<h5 class="card-title">Sistema Vota Aí Previ</h5>
+				<p class="card-text">Consultoria Dataa</p>
+			</div>
+		</div>
+	</footer>
+
+
+</body>
+</html>

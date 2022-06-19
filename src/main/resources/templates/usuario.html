@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tela de Usuário</title>
+</head>
+<body>
+<form>
+	<table>
+		<tr>
+			<th>CPF</th>
+			<th>Nome</th>
+		</tr>
+		<tr th:each="usuario : ${listaUsuarios}">
+			<td th:text="${usuario.cpf}"></td>
+			<td th:text="${usuario.nome}"></td>
+		</tr>	
+	</table>
+
+	<a href="/cadastrarUsuario">Cadastrar Usuário</a>
+
+</form>
+
+</body>
+</html>
