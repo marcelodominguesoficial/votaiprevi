@@ -6,7 +6,7 @@
 	<title>Vota Aí Previ</title>
 	
 <body>
-<div id="topo"></div>
+<div th:replace="base :: topo"></div>
 
 <div th:replace="base :: navlinks"></div>
 
@@ -16,7 +16,16 @@
 		<label for="nomeEleicao">Eleição:</label>
 		<input class="form-control" type="text" th:field="*{nomeEleicao}" id="nomeEleicao" placeholder="Nome da eleição" width="20px" onkeypress="document.getElementById('error-message').style.display = 'none';"/>
 		<div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('nomeEleicao')}" th:errors="*{nomeEleicao}" ></div>
-	</div><br/>
+	</div>
+	
+	<div>
+        <label for="dataInicio">Date Inicial:</label>
+        <input type="date" th:field="*{dataInicio}" id="dataInicio"/>
+    </div>
+	<div>
+        <label for="dataFim">Date Inicial:</label>
+        <input type="date" th:field="*{dataFim}" id="dataFim"/>
+    </div>
 	 
 	<input class="btn btn-success botao-salvar" type="submit" value="Salvar" />
 

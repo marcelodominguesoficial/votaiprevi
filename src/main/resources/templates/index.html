@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html lang="pt-BR" xmlns:th="www.thymeleaf.com">
 <head th:replace="base :: headCust">
-	<meta charset="utf-8">
-	<title>Vota Aí Previ</title>
-	
+<meta charset="utf-8">
+<title>Vota Aí Previ</title>
+
 </head>
 <body>
-<div id="topo"></div>
+	<div th:replace="base :: topo"></div>
 
-<div th:replace="base :: navlinks"></div>
+	<div th:replace="base :: navlinks"></div>
 
-<h1>Olá, Seja bem vindo ao Vota Aí</h1>
-<div th:replace="base :: footer"></div>
+	<div th:replace="base :: background-body"></div>	
+	
+	<div th:replace="base :: footer"></div>
 
 
 <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>

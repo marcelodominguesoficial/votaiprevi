@@ -2,23 +2,49 @@ body {
 	font-family: arial;
 	margin: 0;
 	padding: 0;
+	
 }
 
-#topo {
+.titulo-sistema{
+	position: absolute;
+	font-family: 'Carter One', cursive;
+	font-weight:bolder;
+	color:#00c7a6;
+	top: 15px;	
+	left: 10px;
+}
+
+
+.fundo-home{	
+	background: url("/images/eleicoes.png");
+	background-position: center;
+	display: solid;	
+	width: auto;	
+	height: 493px;	
+}
+
+
+.topo {
 	width: auto;
 	height: 80px;
 	background-color: #051933;
 }
 
-#menu {
+.menu {
 	width: auto;
 	height: 40px;
 	background-color: #093366;
 }
 
 .nav-link {
-	color: #FFFFFF
+	color: #FFFFFF;
+	
 }
+
+.nav-link:hover{
+	color: #FFFF00;
+}
+
 
 footer {
 	background: #051933;
@@ -26,6 +52,13 @@ footer {
 	height: 102px;
 	bottom: 0;		
 	position: absolute;
+	border: none;	
+}
+
+.rodape{
+	color: #FFF;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 .card-body {
@@ -60,9 +93,9 @@ input{
 	position: relative;
 	border: 10px solid #bfdeff;
 	border-radius: 20px;
-	left:23%;
-	height: 350px;
-	width:55%;
+	left:15%;
+	height: 200px;
+	width:70%;
 	padding: 10px;
 	margin-top: 10px;
 }
@@ -81,7 +114,7 @@ input{
 .table-detalhe tbody{
   overflow-y: auto;
   width: 100%;  
-  height: 250px;
+  height: 100px;
 }
 
 
@@ -106,7 +139,7 @@ input{
 
 
 
-.mensagem{	
+.mensagem{
 	left: 200px;
 	width:100%;
 	text-align: center;
@@ -115,10 +148,14 @@ input{
 	
 }
 
+
+.container-form-table{
+	display: block;
+}
  
  .container-detalhe{
- 	display: block;
- 	height: 421px; 	 	
+ 	display: solid;
+ 	height: 320px; 	 	
  }
  
  
@@ -126,8 +163,8 @@ input{
     position: relative;	
  	background-color: #f6efe1;
  	height: 63px;
- 	width: 850px;
- 	left: 23%; 	
+ 	width: 70%;
+ 	left: 15%; 	
  	border: 10px solid #dcdcdc;
 	border-radius: 20px;
 	margin-top: 10px;
@@ -141,7 +178,8 @@ input{
  	display: block;
  }
  
-.btn-cadastrar{	
-	margin-top: 16px;
+.btn-cadastrar{
+	position: relative;
+	margin-top: 15px;
 	margin-left: 45%;
 }
