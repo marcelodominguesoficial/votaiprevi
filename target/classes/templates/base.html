@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:fragment="headCust">
+<meta charset="utf-8">
+<title>Vota aí</title>
+<link th:rel="stylesheet"
+	th:href="@{/webjars/bootstrap/4.0.0-2/css/bootstrap.min.css}" />
+<link th:href="@{/css/estilo.css}" rel="stylesheet" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Carter+One&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="container">
+	<div class="topo" th:fragment="topo">
+		<span class="titulo-sistema"><h1 data-uw-styling-context="true">Vota Aí</h1></span>
+	</div>
+	
+	<nav class="menu" th:fragment="navlinks">
+		<ul class="nav justify-content-center">
+			<li class="nav-item"><a class="nav-link active" href="/">Home</a>
+			</li>
+			<li class="nav-item"><a class="nav-link active" href="/eleicao">Eleição</a>
+			</li>
+			<li class="nav-item"><a class="nav-link active" href="/cargo">Cargo</a>
+			</li>
+			<li class="nav-item"><a class="nav-link active"
+				href="/candidato">Candidato</a></li>
+		</ul>
+	</nav>
+
+	<div class="fundo-home" th:fragment="background-body">
+			
+	</div>
+	
+	<footer th:fragment="footer">
+
+		<div class="rodape">			
+			<h5>Sistema Vota Aí Previ</h5>
+			<p>Consultoria Dataa</p>
+		</div>		
+	</footer>
+</div>
+
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+
+</body>
+</html>
