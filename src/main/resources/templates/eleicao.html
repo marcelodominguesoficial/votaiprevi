@@ -36,9 +36,9 @@
 								<td width="100px"
 									th:text="${#temporals.format(eleicao.dataFim, 'dd-MM-yyyy', new java.util.Locale('pt', 'BR'))}"></td>
 								<td width="100px"><a
-									th:href="@{/editar/{id}(id=${eleicao.id})}">Editar</a></td>
+									th:href="@{/editarEleicao/{id}(id=${eleicao.id})}">Editar</a></td>
 								<td width="100px"><a
-									th:href="@{/excluir/{id}(id=${eleicao.id})}">Excluir</a></td>
+									th:href="@{/excluirEleicao/{id}(id=${eleicao.id})}">Excluir</a></td>
 							</tr>
 						</tbody>
 					</table>

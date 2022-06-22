@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.springframework.format.annotation.DateTimeFormat;
@@ -27,11 +28,13 @@ public class Eleicao {
 	private String nomeEleicao;
 
 	@Column
+	@NotNull(message = "{Empty.Eleicao.dataInicio}")
 	@Convert(converter = LocalDateAttributeConverter.class)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataInicio;
 
 	@Column
+	@NotNull(message = "{Empty.Eleicao.dataFim}")
 	@Convert(converter = LocalDateAttributeConverter.class)
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dataFim;

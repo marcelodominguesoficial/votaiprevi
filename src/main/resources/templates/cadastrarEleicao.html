@@ -13,16 +13,18 @@
 <form class="form-eleicao" action="#" th:action="@{/salvarEleicao}" th:object="${eleicao}" method="post">
 	<div class="form-group">
 		<label for="nomeEleicao">Eleição:</label>
-		<input class="form-control" type="text" th:field="*{nomeEleicao}" id="nomeEleicao" placeholder="Nome da eleição" width="20px" onkeypress="document.getElementById('error-message').style.display = 'none';"/>
+		<input class="form-control" type="text" th:field="*{nomeEleicao}" id="nomeEleicao" placeholder="Nome da eleição" width="20px" onclick="document.getElementById('error-message').style.display = 'none';" onkeypress="document.getElementById('error-message').style.display = 'none';"/>
 		<div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('nomeEleicao')}" th:errors="*{nomeEleicao}" ></div>
 	</div>
 	<div>
         <label for="dataInicio">Date Inicial:</label>
         <input type="date" th:field="*{dataInicio}" id="dataInicio"/>
+        <div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('dataInicio')}" th:errors="*{dataInicio}" ></div>
     </div>
 	<div>
         <label for="dataFim">Date Inicial:</label>
         <input type="date" th:field="*{dataFim}" id="dataFim"/>
+        <div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('dataFim')}" th:errors="*{dataFim}" ></div>
     </div>
     
 	<br/>

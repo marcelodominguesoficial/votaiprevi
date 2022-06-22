@@ -21,10 +21,12 @@
 	<div>
         <label for="dataInicio">Date Inicial:</label>
         <input type="date" th:field="*{dataInicio}" id="dataInicio"/>
+        <div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('dataInicio')}" th:errors="*{dataInicio}" ></div>
     </div>
 	<div>
         <label for="dataFim">Date Inicial:</label>
         <input type="date" th:field="*{dataFim}" id="dataFim"/>
+        <div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('dataFim')}" th:errors="*{dataFim}" ></div>
     </div>
 	 
 	<input class="btn btn-success botao-salvar" type="submit" value="Salvar" />

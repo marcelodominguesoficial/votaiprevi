@@ -1,10 +1,5 @@
 package br.com.votaaiprevi.controller;
 
-import java.time.Instant;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.Date;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,15 +21,9 @@ public class EleicaoController {
 
 	@GetMapping("/eleicao")
 	public String iniciarEleicao(Model model) {
-		model.addAttribute("eleicao", new Eleicao());
 		if (!this.eleicaoService.consultarTodasEleicoes().isEmpty()) {
 			model.addAttribute("listaEleicoes", this.eleicaoService.consultarTodasEleicoes());
 		}
-		
-		model.addAttribute("standardDate", new Date());
-		model.addAttribute("localDateTime", LocalDateTime.now());
-		model.addAttribute("localDate", LocalDate.now());
-		model.addAttribute("timestamp", Instant.now());
 
 		return "eleicao";
 	}
@@ -45,7 +34,7 @@ public class EleicaoController {
 		return "cadastrarEleicao";
 	}
 
-	@GetMapping("/editar/{id}")
+	@GetMapping("/editarEleicao/{id}")
 	public String editarEleicao(@PathVariable("id") long id, Model model) {
 		Eleicao eleicao = this.eleicaoService.consultarEleicaoPorId(id);
 
@@ -54,7 +43,7 @@ public class EleicaoController {
 	}
 
 	
-	@GetMapping("/excluir/{id}")
+	@GetMapping("/excluirEleicao/{id}")
 	public String excluirEleicao(@PathVariable("id") long id, Model model) {
 		this.eleicaoService.excluirEleicao(id);
 		if (!this.eleicaoService.consultarTodasEleicoes().isEmpty()) {

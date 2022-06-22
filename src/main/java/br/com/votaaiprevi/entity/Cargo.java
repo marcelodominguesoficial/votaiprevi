@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 @Entity
 public class Cargo {
@@ -12,6 +14,8 @@ public class Cargo {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
+	@Size(max = 50, message = "{Size.Cargo.nomeCargo}")
+	@NotEmpty(message = "{Empty.Cargo.nomeCargo}")
 	private String nomeCargo;
 
 	public Long getId() {

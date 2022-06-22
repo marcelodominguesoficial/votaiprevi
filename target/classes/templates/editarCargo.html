@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: headCust">
+	<meta charset="utf-8">
+	<title>Vota Aí Previ</title>
+	
+<body>
+<div th:replace="base :: topo"></div>
+
+<div th:replace="base :: navlinks"></div>
+
+<form class="form-eleicao" action="#" th:action="@{/salvarCargo}" th:object="${cargo}" method="post">
+	<div class="form-group">
+		<input type="hidden" th:field="*{id}" />
+		<label for="nomeCargo">Cargo:</label>
+		<input class="form-control" type="text" th:field="*{nomeCargo}" id="nomeCargo" placeholder="Nome do cargo" width="20px" onkeypress="document.getElementById('error-message').style.display = 'none';"/>
+		<div id="error-message" class="alert alert-warning" th:if="${#fields.hasErrors('nomeCargo')}" th:errors="*{nomeCargo}" ></div>
+	</div>
+	 
+	<input class="btn btn-success botao-salvar" type="submit" value="Salvar" />
+
+</form>
+
+<div th:replace="base :: footer"></div>
+<script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+</html>
