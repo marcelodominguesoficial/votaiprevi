@@ -10,7 +10,7 @@
 
 <div th:replace="base :: navlinks"></div>
 
-<form class="form-eleicao" action="#" th:action="@{/salvarCargo}" th:object="${cargo}" method="post">
+<form class="form-cadastro" action="#" th:action="@{/salvarCargo}" th:object="${cargo}" method="post">
 	<div class="form-group">
 		<label for="nomeCargo">Cargo:</label>
 		<input class="form-control" type="text" th:field="*{nomeCargo}" id="nomeCargo" placeholder="Nome do cargo" width="20px" onclick="document.getElementById('error-message').style.display = 'none';" onkeypress="document.getElementById('error-message').style.display = 'none';"/>
@@ -19,7 +19,10 @@
     
 	<br/>
 	 
-	<input class="btn btn-success botao-salvar" type="submit" value="Salvar" />
+	<div>
+		<input class="btn btn-success botao-salvar" type="submit" value="Salvar"/>
+		<a class="btn btn-danger botao-cancelar" href="/cargo" role="button">Cancelar</a>
+	</div>
 
 </form>
 

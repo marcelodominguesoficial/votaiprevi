@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.validation.constraints.NotEmpty;
 
 @Entity
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -23,6 +24,7 @@ public abstract class Usuario {
 
 	private String cpf;
 
+	@NotEmpty(message = "{Empty.Usuario.nome}")
 	private String nome;
 
 	@Column(insertable=false, updatable=false)

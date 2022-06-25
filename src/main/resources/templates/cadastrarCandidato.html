@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: headCust">
+<meta charset="utf-8">
+<title>Vota Aí Previ</title>
+<body>
+	<div th:replace="base :: topo"></div>
+
+	<div th:replace="base :: navlinks"></div>
+
+	<form class="form-cadastro" action="#" th:action="@{/salvarCandidato}"
+		th:object="${candidato}" method="post">
+
+		<input type="hidden" name="acao" value="inclusao"/>
+		
+
+		<div class="form-group">
+		
+			<label for="nomeCandidato">Candidato:</label> <input
+				class="form-control" type="text" th:field="*{nome}"
+				id="nomeCandidato" placeholder="Nome do candidato" width="20px"
+				onclick="document.getElementById('error-message').style.display = 'none';"
+				onkeypress="document.getElementById('error-message').style.display = 'none';" />
+				
+			<div id="error-message" class="alert alert-warning"
+				th:if="${#fields.hasErrors('nome')}" th:errors="*{nome}">
+			</div>
+		</div>
+
+		<br /> 
+		
+		<div>
+			<label for="cargo">Cargo:</label> 
+			<select class="form-control" th:field="*{cargo.id}"
+				id="dropDownList">
+				<option value="0">Selecione a opção</option>
+				<option th:each="cargo : ${listaCargos}" th:value="${cargo.id}" th:text="${cargo.nomeCargo}">
+					
+				</option>
+			</select>
+			<div id="error-message" class="alert alert-warning"
+					th:each="err : ${#fields.errors('global')}" th:text="${err}">
+			</div>
+			
+			 
+		</div>
+		
+		<br />		
+
+				
+		<div>
+			<input class="btn btn-success botao-salvar" type="submit" value="Salvar"/>
+			<a class="btn btn-danger botao-cancelar" href="/candidato" role="button">Cancelar</a>
+		</div>
+		
+	
+		
+
+	</form>
+
+
+	<div th:replace="base :: footer"></div>
+
+</body>
+</html>

@@ -66,7 +66,7 @@ footer {
 	color: #FFFFFF;
 }
 
-.form-eleicao {
+.form-cadastro {
 	background: #f2f8fb; 
 	-color: #6b9dae;
 	color: #191970; 
@@ -81,7 +81,12 @@ footer {
 
 .botao-salvar {
 	position: relative;
-	left: 44%;
+	left: 30%;
+}
+
+.botao-cancelar {
+	position: relative;
+	left: 45%;
 }
 
 input{

@@ -1,5 +1,7 @@
 package br.com.votaaiprevi.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +23,9 @@ public class CargoController {
 	
 	@GetMapping("/cargo")
 	public String iniciarCargo(Model model) {
-		if (!this.cargoService.consultarTodosCargos().isEmpty()){
-			model.addAttribute("listaCargos", this.cargoService.consultarTodosCargos());
+		List<Cargo> listaCargos = this.cargoService.consultarTodosCargos();
+		if (!listaCargos.isEmpty()){
+			model.addAttribute("listaCargos", listaCargos);
 		}
 		return "cargo";
 	}
@@ -48,7 +51,7 @@ public class CargoController {
 		if (!this.cargoService.consultarTodosCargos().isEmpty()) {
 			model.addAttribute("listaCargos", this.cargoService.consultarTodosCargos());
 		}
-		return "redirect:/cargo";
+		return "cargo";
 	}
 	
 	@PostMapping("/salvarCargo")
@@ -64,7 +67,7 @@ public class CargoController {
 			model.addAttribute("listaCargos", this.cargoService.consultarTodosCargos());
 		}
 		
-		return "redirect:/cargo";
+		return "cargo";
 	}
 	
 }

@@ -1,5 +1,7 @@
 package br.com.votaaiprevi.controller;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,10 +23,10 @@ public class EleicaoController {
 
 	@GetMapping("/eleicao")
 	public String iniciarEleicao(Model model) {
-		if (!this.eleicaoService.consultarTodasEleicoes().isEmpty()) {
-			model.addAttribute("listaEleicoes", this.eleicaoService.consultarTodasEleicoes());
+		List<Eleicao> listaEleicoes = this.eleicaoService.consultarTodasEleicoes();
+		if (!listaEleicoes.isEmpty()) {
+			model.addAttribute("listaEleicoes", listaEleicoes);
 		}
-
 		return "eleicao";
 	}
 
@@ -46,10 +48,11 @@ public class EleicaoController {
 	@GetMapping("/excluirEleicao/{id}")
 	public String excluirEleicao(@PathVariable("id") long id, Model model) {
 		this.eleicaoService.excluirEleicao(id);
-		if (!this.eleicaoService.consultarTodasEleicoes().isEmpty()) {
-			model.addAttribute("listaEleicoes", this.eleicaoService.consultarTodasEleicoes());
+		List<Eleicao> listaEleicoes = this.eleicaoService.consultarTodasEleicoes();
+		if (!listaEleicoes.isEmpty()) {
+			model.addAttribute("listaEleicoes", listaEleicoes);
 		}
-		return "redirect:/eleicao";
+		return "eleicao";
 	}
 	
 	
@@ -61,10 +64,11 @@ public class EleicaoController {
 		}
 		
 		this.eleicaoService.salvarEleicao(eleicao);
-		if (!this.eleicaoService.consultarTodasEleicoes().isEmpty()) {
-			model.addAttribute("listaEleicoes", this.eleicaoService.consultarTodasEleicoes());
+		List<Eleicao> listaEleicoes = this.eleicaoService.consultarTodasEleicoes();
+		if (!listaEleicoes.isEmpty()) {
+			model.addAttribute("listaEleicoes", listaEleicoes);
 		}
-		return "redirect:/eleicao";
+		return "eleicao";
 	}
 	
 }

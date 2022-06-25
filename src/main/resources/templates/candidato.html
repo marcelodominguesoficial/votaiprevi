@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head th:replace="base :: headCust">
+<meta charset="utf-8">
+<title>Vota Aí Previ</title>
+</head>
+<body>
+	<div th:replace="base :: topo"></div>
+
+	<div th:replace="base :: navlinks"></div>
+
+	<div class="container-detalhe" th:if="${listaCandidatos}">
+		<div>
+			<div class="card-titulo-tela">
+				<span class="titulo-tela">Cadastro de Candidatos</span>
+			</div>
+			<div class="container-form-table">
+				<form class="form-table">
+					<table class="table-detalhe">
+						<thead>
+							<tr>
+								<th width="500px">Candidato</th>
+								<th width="300px">Cargo</th>
+								<th width="100px">Editar</th>
+								<th width="100px">Excluir</th>
+							</tr>
+						</thead>
+
+						<tbody>
+							<tr th:each="candidato : ${listaCandidatos}">
+								<td th:text="${candidato.nome}" width="500px"></td>
+								<td th:text="${candidato.cargo.nomeCargo}" width="300px"></td>
+								<td width="100px"><a
+									th:href="@{/editarCandidato/{id}(id=${candidato.id})}">Editar</a></td>
+								<td width="100px"><a
+									th:href="@{/excluirCandidato/{id}(id=${candidato.id})}">Excluir</a></td>
+							</tr>
+						</tbody>
+					</table>
+				</form>
+			</div>
+		</div>
+	</div>
+
+	<div class="mensagem" th:unless="${listaCandidatos}">
+		<div>Nenhum candidato cadastrado</div>
+	</div>
+
+
+	<a class="btn btn-primary btn-success btn-cadastrar"
+		href="/cadastrarCandidato" role="button">Cadastrar Candidato</a>
+
+	<div th:replace="base :: footer"></div>
+</body>
+</html>
